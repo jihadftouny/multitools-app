@@ -1,6 +1,9 @@
 # MultiJooj
 
+A passion project that currently includes a stopwatch, will include different timers, and different tools in the future.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+
 
 ## Development server
 
