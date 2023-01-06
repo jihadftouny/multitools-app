@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'timer-app'`, () => {
+  it(`should have as title 'multitools-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('timer-app');
+    expect(app.title).toEqual('multitools-app');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('timer-app app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('multitools-app app is running!');
   });
 });

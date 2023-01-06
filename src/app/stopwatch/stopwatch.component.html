@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <div class="container d-flex justify-content-center mt-5 pt-5 pb-4 px-5 bg-secondary rounded-40-top" >
+            <span class="display-6">{{hr}}:</span>
+            <span class="display-6">{{min}}:</span>
+            <span class="display-6">{{sec}}:</span>
+            <span class="display-6">{{mls}}</span>
+        </div>
+        <div class="container d-flex justify-content-center bg-secondary pb-4 rounded-40-bottom">
+            <button *ngIf="!running" (click)="start()" class="btn btn-dark rounded-circle btn-block m-1" routerLink="/stopwatch">Start</button>
+            <button *ngIf="running" (click)="start()" class="btn btn-dark rounded-circle btn-block m-1" routerLink="/stopwatch">Stop</button>
+            <button (click)="reset()" class="btn btn-dark rounded-circle btn-block m-1" routerLink="/stopwatch">Reset</button>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>
