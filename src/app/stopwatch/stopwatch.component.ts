@@ -14,6 +14,8 @@ export class StopwatchComponent implements OnInit {
   startTimer: any;
   running = false;
 
+  laps: any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
@@ -62,8 +64,22 @@ export class StopwatchComponent implements OnInit {
     this.running = false;
   }
 
-  reset(): void{
+  reset(): void {
     this.hr = this.min = this.sec = this.mls = '0' + 0;
     this.stop(); //here is where the stop() becomes useful lol
+    this.laps;
+    this.laps = [];
+  }
+
+  addLap() {
+    if (this.running) {
+      this.laps.push({
+        id: this.laps.length + 1,
+        hr: this.hr,
+        min: this.min,
+        sec: this.sec,
+        mls: this.mls
+      })
+    };
   }
 }
