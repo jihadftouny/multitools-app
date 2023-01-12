@@ -16,7 +16,7 @@ export class CountdownComponent implements OnInit {
   hrDisplay: any;
   minDisplay: any;
   secDisplay: any;
-  mls: any = 99;
+  mls: any = 0;
 
   //setInterval and timer is running, is paused, and if it was paused at least once
   startTimer: any;
@@ -52,6 +52,7 @@ export class CountdownComponent implements OnInit {
       }
 
       this.isRunning = true;
+      clearInterval(this.startTimer);
       this.startTimer = setInterval(() => {
 
         if (this.secDisplay === '0' + 0 && this.minDisplay === '0' + 0 && this.hrDisplay === '0' + 0) {
@@ -59,8 +60,23 @@ export class CountdownComponent implements OnInit {
           this.stopCountdown();
         }
 
-        this.secDisplay--;
-        this.secDisplay = this.secDisplay < 10 ? '0' + this.secDisplay : this.secDisplay;
+        this.mls--;
+        if (this.mls === -1) {
+          if (this.minDisplay === 0 && this.hourGone && this.minGone) {
+            this.secGone = true;
+          }
+
+          if (!this.secGone) {
+            this.secDisplay--;
+            this.secDisplay = this.secDisplay < 10 ? '0' + this.secDisplay : this.secDisplay;
+            this.mls = 99;
+          } else if (!this.minGone && !this.hourGone && this.secGone) {
+            this.stopCountdown();
+          }
+
+
+        }
+
 
         if (this.secDisplay === '0' + -1) {
           if (this.minDisplay === 0 && this.hourGone) {
@@ -71,8 +87,8 @@ export class CountdownComponent implements OnInit {
             this.minDisplay--;
             this.minDisplay = this.minDisplay < 10 ? '0' + this.minDisplay : this.minDisplay;
             this.secDisplay = 59;
-          } else if (!this.minGone && !this.hourGone) {
-            this.stopCountdown();
+          } else if (this.minDisplay === '0' + 0) {
+            this.minGone = true;
           }
 
 
@@ -90,14 +106,19 @@ export class CountdownComponent implements OnInit {
 
 
 
-      }, 1000)
+      }, 10)
     } else { }
   }
 
   public stopCountdown(): void {
     clearInterval(this.startTimer);
     alert("Countdown ended");
+    this.wasPaused = false;
+    this.isPaused = false;
     this.isRunning = false;
+    this.hourGone = false;
+    this.minGone = false;
+    this.secGone = false;
   }
   public pauseCountdown() {
     clearInterval(this.startTimer);
@@ -105,7 +126,6 @@ export class CountdownComponent implements OnInit {
     this.isPaused = true;
   }
   public continueCountdown() {
-    clearInterval(this.startTimer);
     this.isPaused = false;
     this.isRunning = false;
     this.startCountdown();
