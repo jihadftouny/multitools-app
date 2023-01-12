@@ -7,3 +7,15 @@
 .rounded-40-bottom {
     border-radius: 0 0 40px 40px;
 }
+
+.bg-one{
+  background-color: #242424;
+}
+
+html, body, app-root {
+  height: 92.7vh;
+}
+body {
+  margin-bottom: 0;
+  margin-top: 0;
+}

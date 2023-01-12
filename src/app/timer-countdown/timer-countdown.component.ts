@@ -38,6 +38,10 @@ export class CountdownComponent implements OnInit {
   public startCountdown() {
     if (!this.isRunning && !this.isPaused) {
 
+      if (this.hrForm > 99) { this.hrForm = 99 }
+      if (this.minForm > 59) { this.minForm = 59 }
+      if (this.secForm > 59) { this.secForm = 59 }
+
       if (!this.wasPaused) {
         this.hrDisplay = this.hrForm;
         this.minDisplay = this.minForm;
@@ -113,6 +117,10 @@ export class CountdownComponent implements OnInit {
   public stopCountdown(): void {
     clearInterval(this.startTimer);
     alert("Countdown ended");
+    this.hrForm = 0;
+    this.minForm = 0;
+    this.secForm = 0;
+    this.mls = 0;
     this.wasPaused = false;
     this.isPaused = false;
     this.isRunning = false;
