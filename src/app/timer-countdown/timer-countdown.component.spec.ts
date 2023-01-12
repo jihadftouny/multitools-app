@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PomodoroComponent } from './pomodoro.component';
+import { CountdownComponent } from './timer-countdown.component';
 
-describe('PomodoroComponent', () => {
-  let component: PomodoroComponent;
-  let fixture: ComponentFixture<PomodoroComponent>;
+describe('CountdownComponent', () => {
+  let component: CountdownComponent;
+  let fixture: ComponentFixture<CountdownComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PomodoroComponent ]
+      declarations: [ CountdownComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PomodoroComponent);
+    fixture = TestBed.createComponent(CountdownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

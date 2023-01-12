@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StopwatchComponent } from './stopwatch.component';
+import { StopwatchComponent } from './timer-stopwatch.component';
 
 describe('StopwatchComponent', () => {
   let component: StopwatchComponent;

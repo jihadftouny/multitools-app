@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CountdownComponent } from './countdown/countdown.component';
+import { CountdownComponent } from './timer-countdown/timer-countdown.component';
 import { HomeComponent } from './home/home.component';
-import { PomodoroComponent } from './pomodoro/pomodoro.component';
-import { StopwatchComponent } from './stopwatch/stopwatch.component';
+import { PomodoroComponent } from './timer-pomodoro/timer-pomodoro.component';
+import { StopwatchComponent } from './timer-stopwatch/timer-stopwatch.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
