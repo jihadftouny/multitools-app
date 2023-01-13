@@ -65,7 +65,8 @@ export class CountdownComponent implements OnInit {
         }
 
         this.mls--;
-        if (this.mls === -1) {
+        this.mls = this.mls < 10 ? '0' + this.mls : this.mls;
+        if (this.mls === '0' + -1) {
           if (this.minDisplay === 0 && this.hourGone && this.minGone) {
             this.secGone = true;
           }

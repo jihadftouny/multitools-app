@@ -1,0 +1,4 @@
+.tbodyDiv{
+    max-height: clamp(5em,40vh,250px);
+    overflow: auto;
+    }
