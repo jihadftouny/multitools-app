@@ -60,7 +60,6 @@ export class CountdownComponent implements OnInit {
       this.startTimer = setInterval(() => {
 
         if (this.secDisplay === '0' + 0 && this.minDisplay === '0' + 0 && this.hrDisplay === '0' + 0) {
-          alert("Yolo");
           this.stopCountdown();
         }
 
