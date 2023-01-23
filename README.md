@@ -1,6 +1,6 @@
 # MultiJooj
 
-A passion project that currently includes a stopwatch, will include different timers, and different tools in the future.
+A multitools website built with Angular and Bootstrap, currently in its early stage. Includes timers and tabletop tools will be added soon.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
 
